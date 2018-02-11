@@ -4,6 +4,11 @@ const routes = () => {
   let router = express.Router();
 
   router.route('/allParks').get((req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept'
+    );
     res.json([
       {
         parkId: 1,
@@ -59,6 +64,11 @@ const routes = () => {
   });
 
   router.route('/singlePark').get((req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept'
+    );
     res.json({
       parkId: 1,
       parkName: 'shahne',
